@@ -31,7 +31,9 @@ minetest.register_on_dieplayer(function(player)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)
 
-
+    if bones[player_name] == nil then
+        bones[player_name] = {}
+    end
     if doesnt_have_value(bones[player_name], pos) then
         bones[player_name][#bones[player_name]+1] = pos
     end
